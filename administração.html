@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de administração</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2 id="msg"></h2>
+    <script>
+        let continuar = ""
+        let msg = ""
+        do{
+            let nome = prompt("Digite o nome do professor");
+            let endereco = prompt("Digite o seu endereço");
+            let cidade = prompt("Digite a sua cidade");
+            let uf = prompt("Digite a sigla do seu estado");
+            let cep = prompt("Digite o CEP");
+            let rg = prompt("Digite o seu RG");
+            let dataNasc = prompt("Digite a data de nascimento");
+            let escolaridade = prompt("Digite o seu grau de escolaridade");
+            let formacao = prompt("Digite o curso que se formou");
+
+            msg += "Nome do Professor: " + nome + " || Endereço: " + endereco + " || Cidade: " + cidade + " || UF: " + uf + " <br> CEP: " + cep + 
+            " || RG: " + rg + " || Data de nascimento: " + dataNasc + " || Escolaridade: " + escolaridade + " || Formação: " + formacao + "<br>";
+            msg += "#################################################################### <br>" 
+
+            continuar = prompt("Deseja continuar? [s/n]")
+        }while (continuar == "s")
+        
+        document.getElementById("msg").innerHTML = msg;
+
+    </script>
+</body>
+</html>
