@@ -12,28 +12,39 @@
     </style>
 </head>
 <body>
+    <h1>Imposto de Renda</h1><br>
     <h3 id="msg"></h3>
     <script>
-        let nome = prompt("Nome do contribuinte");
-        let cpf = prompt("Digite o CPF do contribuinte");
-        let rendaAnual = Number(prompt("Digite sua renda anual"));
-        let dependentes = Number(prompt("Digite o numero de depedentes"));
-        let rendaLiquida = 0;
+        let msg = "";
+        let continuar = "";
+        do{
+            let nome = prompt("Nome do contribuinte");
+            let cpf = prompt("Digite o CPF do contribuinte");
+            let rendaAnual = Number(prompt("Digite sua renda anual"));
+            let dependentes = Number(prompt("Digite o numero de depedentes"));
+            let rendaLiquida = 0;
 
-        if (rendaAnual > 900 && rendaAnual <= 5000){
-            rendaLiquida = rendaAnual * 0.95;
-        }else if(rendaAnual > 5000 && rendaAnual <= 10000){
-            rendaLiquida = rendaAnual * 0.90;
-        }else if (rendaAnual > 10000){
-            rendaLiquida = rendaAnual * 0.85;
-        }
+            if (rendaAnual > 900 && rendaAnual <= 5000){
+                rendaLiquida = rendaAnual * 0.95;
+            }else if(rendaAnual > 5000 && rendaAnual <= 10000){
+                rendaLiquida = rendaAnual * 0.90;
+            }else if (rendaAnual > 10000){
+                rendaLiquida = rendaAnual * 0.85;
+            }
 
-        rendaLiquida -= dependentes * 110
+            rendaLiquida -= dependentes * 110;
+            msg += "Contribuinte: " + nome + " || CPF: " + cpf + " || Número de dependentes: " + dependentes + " || Renda Bruta: " + rendaAnual + " || Renda Liquida: " + rendaLiquida + "<br>"
+            msg += "############################################################################################################ <br>";
+            continuar = prompt("Deseja continuar?[s/n]");
+
+
+        }while (continuar == "s")
+        
         
 
 
 
-        document.getElementById("msg").innerHTML = rendaLiquida;
+        document.getElementById("msg").innerHTML = msg;
     </script>
 </body>
 </html>
